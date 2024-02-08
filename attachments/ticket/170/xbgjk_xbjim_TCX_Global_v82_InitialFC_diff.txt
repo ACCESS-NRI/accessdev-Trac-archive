@@ -1,0 +1,4262 @@
+Differences 
+
+Job xbgjk Title copy xboai InitialFC ACCESS TCX
+Job xbjim Title N512 Um8.2 run (InitialFC for NCI)
+Difference in window personal_gen
+ -> Model Selection
+   -> User Information and Submit Method
+     -> General details
+Entry box: Mail-id for notification of end-of-run
+ Job xbgjk: Entry is set to 'nomail'
+ Job xbjim: Entry is set to '$USER@solar'
+Entry box: Target Machine user-id:
+ Job xbgjk: Entry is set to 'pag548'
+ Job xbjim: Entry is set to 'ycx548'
+
+Difference in window subindep_SubmitMethod
+ -> Model Selection
+   -> User Information and Submit Method
+     -> Job submission method
+Entry box: Number of processes for ATMOS East-West (must be 1 or an even number)
+ Job xbgjk: Entry is set to '16'
+ Job xbjim: Entry is set to '8'
+Entry box: Number of processes for ATMOS North South
+ Job xbgjk: Entry is set to '10'
+ Job xbjim: Entry is set to '12'
+Check box: Run Model using SMT
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Entry box: Programming environment file
+ Job xbgjk: Entry is set to '/home/548/ycx548/.um_82_env.163'
+ Job xbjim: Entry is set to '/home/548/ycx548/.um_82_env'
+
+Difference in window subindep_ScriptMod
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> Script Inserts and Modifications
+Differences in Table Defined Environment Variables
+ 1,4c1,3
+<  XLFRTEOPTS buffering=disable_all
+<  XLSMPOPTS stack=1000000000
+<  UM_SECTOR_SIZE 512
+<  FASTRUN true
+---
+>  MP_POLLING_INTERVAL 1500000
+>  MP_RETRANSMIT_INTERVAL 400000
+>  VN 8.2
+
+
+Difference in window subindep_Output
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> Output choices
+Check box: Output Iteration Count to diagnostic file
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window subindep_OutputMan
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> Output management
+Check box: Specifying extended script output
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Entry box: Specify maximum length for 'STANDARD OUT' stream
+ Job xbgjk: Entry is set to '200000'
+ Job xbjim: Entry is set to '500000'
+
+Difference in window subindep_IO_Services
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> IO Services
+Check box: Change default I/O buffering and data alignment
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+
+Difference in window subindep_FileDir
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> Time Convention and SCRIPT Environment Variables.
+Differences in Table Defined Environment Variables for Directories
+ 2c2
+<  UM_82_ENV /home/548/ycx548/.um_82_env.163
+---
+>  UM_RAD_SPECTRAL_GL $UMDIR/vn$UM_VERSION/ctldata/spectral/ga3_1
+
+
+Difference in window subindep_Runlen
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> Start Date and Run Length Options
+Entry box: Hours
+ Job xbgjk: Entry is set to '38'
+ Job xbjim: Entry is set to '12'
+Entry box: Minutes
+ Job xbgjk: Entry is set to '5'
+ Job xbjim: Entry is set to '0'
+
+Difference in window subindep_HandEdit
+ -> Model Selection
+   -> Input/Output Control and Resources
+     -> User hand edit files
+Differences in Table Hand edits
+ 1,14c1,6
+<  ~yix/keep/um/UKV/PS32/lconvection_false Y
+<  ~yix/keep/um/UKV/PS32/STASHC_AddCovLS_3hr N
+<  ~yix/keep/um/UKV/PS32/ukvs_trap.ed Y
+<  ~yix/keep/um/UKV/PS32/stashc_PS32.init N
+<  ~yix/keep/um/UKV/PS32/UKV_JULES_UM8p0.ed Y
+<  ~yix/keep/um/UKV/PS32/TSoilSnow_assim.ed Y
+<  ~yix/keep/um/UKV/PS32/pwr7_env_vars.ed Y
+<  ~yix/keep/um/UKV/PS32/UKV_8.2_IO_server.ed Y
+<  ~yix/keep/um/UKV/PS32/aeroscl_ukv.ed Y
+<  ~yix/keep/um/UKV/PS32/handedit_land_emis_ruth2.ed Y
+<  ~yix/keep/um/UKV/PS32/calc_vis_prob0666 Y
+<  ~yix/keep/um/UKV/PS32/ice_type_fix Y
+<  ~yix/keep/um/UKV/PS32/HrDA_PPheads.ed Y
+<  ~yix/keep/um/UKV/PS32/move_jules_snow_param.ed Y
+---
+>  ~yix/keep/um/um8.2/GL_HANDEDITS_8.2_stashc.init Y
+>  ~yix/keep/um/um8.2GL_HANDEDITS_8.2_foamblk N
+>  ~yix/keep/um/um8.2/GL_HANDEDITS_8.2_foamout N
+>  ~yix/keep/um/um8.2/GL_HANDEDITS_8.2_noTevlim N
+>  ~yix/keep/um/um8.2/GL_HANDEDITS_8.2_pwr7_env_vars Y
+>  ~yix/keep/um/um8.2/GL_HANDEDITS_8.2_IOSRV_QG Y
+
+
+Difference in window subindep_FCM_Gen
+ -> Model Selection
+   -> FCM Configuration
+     -> FCM Extract directories and Output levels
+Entry box: Local machine root extract directory (UM_OUTDIR)
+ Job xbgjk: Entry is set to 'op_naming_convention'
+ Job xbjim: Entry is set to '$HOME/um_extracts'
+Entry box: Target machine root extract directory (UM_ROUTDIR)
+ Job xbgjk: Entry is set to 'op_naming_convention'
+ Job xbjim: Entry is set to '/data/nwp/nm'
+
+Difference in window subindep_FCM_UM_Opt
+ -> Model Selection
+   -> FCM Configuration
+     -> FCM Options for Atmosphere and Reconfiguration
+Entry box: The Subversion URL (UM_SVN_URL)
+ Job xbgjk: Entry is set to 'svn://fcm2/UM_svn/UM/trunk'
+ Job xbjim: Entry is set to 'fcm:um_tr'
+
+Difference in window subindep_FCM_JULES_Opt
+ -> Model Selection
+   -> FCM Configuration
+     -> FCM Options for JULES and FLake
+Entry box: Specify revision number or keyword of JULES code base
+ Job xbgjk: Entry is set to 'um8.0'
+ Job xbjim: Entry is set to 'um8.2'
+
+Difference in window subindep_Compile
+ -> Model Selection
+   -> Compilation and Run Options
+     -> Compile and run options for Atmosphere and Reconfiguration
+Entry box: Filename for the Model executable
+ Job xbgjk: Entry is set to 'UM8.2_UKV_PS32.exe'
+ Job xbjim: Entry is set to 'umefa.exe'
+Entry box: Filename for the Reconfiguration executable
+ Job xbgjk: Entry is set to 'qxreconf'
+ Job xbjim: Entry is set to 'umefa_qxreconf'
+Entry box: Directory for the Model executable
+ Job xbgjk: Entry is set to '/g/sc/data/yix/82/UKV/ROUTDIR/yix/xbkxf/umatmos/bin'
+ Job xbjim: Entry is set to '/short/dp9/ycx548/data/um/bin/n512'
+Entry box: Directory for the Reconfiguration executable
+ Job xbgjk: Entry is set to '$UM_EXECS'
+ Job xbjim: Entry is set to '/short/dp9/ycx548/data/um/bin/n512'
+
+Difference in window subindep_Recon_Output
+ -> Model Selection
+   -> Reconfiguration
+     -> Reconfiguration Output
+Radio button: Output option for distributed-memory parallel machines:
+ Job xbgjk: Entry is set to 'Delete all DATAW text output files on successful completion.'
+ Job xbjim: Entry is set to 'Always keep output from PEs in DATAW even when the reconfiguration works.'
+
+Difference in window subindep_PostProc_PPInit
+ -> Model Selection
+   -> Post Processing
+     -> Initialization and processing of mean & standard PP files
+Differences in Table PP Files
+ 1,11c1,11
+<  PP0/PA/60 1 0 N Y 1 2 -1 H A N
+<  PP1/PB/61 1 0 N Y 1 0 3 H A N
+<  PP2/PC/62 1 0 N Y 1 0 -1 H A N
+<  PP3/PD/63 1 0 N Y 1 0 3 H A N
+<  PP4/PE/64 1 0 N Y 1 2 -1 H A N
+<  PP5/PF/65 1 0 N Y 1 2 -1 H A N
+<  PP6/PG/66 1 0 N Y 1 0 -1 H A N
+<  PP7/PH/67 1 8000 N N      N
+<  PP8/PI/68 1 20480 N Y 1 0 -1 H A N
+<  PP9/PJ/69 1 0 N Y 1 0 -1 H A N
+<  PP10/PK/151 1 0 N N Blank Blank -1 H A Blank
+---
+>  PP0/PA/60 1 0 N N  -1 -1   N
+>  PP1/PB/61 1 0 N Y 12 3 -1 H A Y
+>  PP2/PC/62 1 10000 N N  -1 -1   N
+>  PP3/PD/63 1 32000 N Y 12 3 -1 H A Y
+>  PP4/PE/64 1 0 N N Blank Blank -1 Blank Blank N
+>  PP5/PF/65 1 0 N N Blank Blank -1 Blank Blank N
+>  PP6/PG/66 1 0 N N Blank Blank -1 Blank Blank N
+>  PP7/PH/67 1 0 N N Blank Blank -1 Blank Blank N
+>  PP8/PI/68 0 18432 N N Blank Blank -1 Blank Blank N
+>  PP9/PJ/69 1 0 N N Blank Blank -1 Blank Blank N
+>  PP10/PK/151 0 0 N N Blank Blank Blank Blank Blank Blank
+
+
+Difference in window atmos_Domain_Horiz
+ -> Model Selection
+   -> Atmosphere
+     -> Model Resolution and Domain
+       -> Horizontal
+Entry box: Column Spacing
+ Job xbgjk: Entry is set to '0.017533'
+ Job xbjim: Entry is inactive
+Entry box: First Latitude
+ Job xbgjk: Entry is set to '-38.0488'
+ Job xbjim: Entry is inactive
+Entry box: First Longitude
+ Job xbgjk: Entry is set to '144.9012'
+ Job xbjim: Entry is inactive
+Entry box: Number of Columns
+ Job xbgjk: Entry is set to '648'
+ Job xbjim: Entry is inactive
+Entry box: Number of Land Points
+ Job xbgjk: Entry is set to '201841'
+ Job xbjim: Entry is set to '267049'
+Entry box: Frame size
+ Job xbgjk: Entry is set to '5'
+ Job xbjim: Entry is inactive
+Entry box: Number of Rows
+ Job xbgjk: Entry is set to '720'
+ Job xbjim: Entry is inactive
+Entry box: Row Spacing
+ Job xbgjk: Entry is set to '0.017255'
+ Job xbjim: Entry is inactive
+Entry box: Halo size for NS boundaries of PEs
+ Job xbgjk: Entry is set to '5'
+ Job xbjim: Entry is set to '8'
+Radio button: Select Area Option
+ Job xbgjk: Entry is set to 'Limited Area Model (Classic style)'
+ Job xbjim: Entry is set to 'Global Model       '
+Entry box: North Pole Longitude
+ Job xbgjk: Entry is set to '180.0000'
+ Job xbjim: Entry is inactive
+Entry box: Lateral Boundary Conditions Rimwidth
+ Job xbgjk: Entry is set to '8'
+ Job xbjim: Entry is inactive
+Entry box: Number of Columns ( X - Direction )
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1024'
+Entry box: Number of Rows    ( Y - Direction )
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '769'
+
+Difference in window atmos_Domain_Vert
+ -> Model Selection
+   -> Atmosphere
+     -> Model Resolution and Domain
+       -> Vertical
+Entry box: Number of ozone levels
+ Job xbgjk: Entry is set to '35'
+ Job xbjim: Entry is set to '70'
+Entry box: File
+ Job xbgjk: Entry is set to 'vertlevs_UK4_L70'
+ Job xbjim: Entry is set to 'vertlevs_L70_80km'
+Entry box: Directory:
+ Job xbgjk: Entry is set to '$UMDIR/vn7.6/ctldata/vert'
+ Job xbjim: Entry is set to '${UMDIR}/vn${VN}/ctldata/vert'
+
+Difference in window atmos_Config_Prognos
+ -> Model Selection
+   -> Atmosphere
+     -> Model Configuration
+       -> Prognostic variable choices
+Check box: Advecting the aerosol
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+Check box: Total aerosol fields
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Source sink terms
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_Config_Tracer
+ -> Model Selection
+   -> Atmosphere
+     -> Model Configuration
+       -> Atmospheric Tracers
+Entry box: Number of atmospheric tracer levels
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '70'
+
+Difference in window atmos_Science_Tstep
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Time-Stepping
+Differences in Table Time weights for Boundary Layer Levels
+ 2,30c2
+<  2 2 1.500e+00
+<  3 3 1.500e+00
+<  4 4 1.500e+00
+<  5 5 1.500e+00
+<  6 6 1.500e+00
+<  7 7 1.500e+00
+<  8 8 1.500e+00
+<  9 9 1.500e+00
+<  10 10 1.500e+00
+<  11 11 1.500e+00
+<  12 12 1.500e+00
+<  13 13 1.500e+00
+<  14 14 1.500e+00
+<  15 15 1.500e+00
+<  16 16 1.500e+00
+<  17 17 1.500e+00
+<  18 18 1.500e+00
+<  19 19 1.500e+00
+<  20 20 1.500e+00
+<  21 21 1.500e+00
+<  22 22 1.500e+00
+<  23 23 1.500e+00
+<  24 24 1.500e+00
+<  25 25 1.500e+00
+<  26 26 1.500e+00
+<  27 27 1.500e+00
+<  28 28 1.500e+00
+<  29 29 1.500e+00
+<  30 69 1.500e+00
+---
+>  2 50 1.500e+00
+
+Entry box: Number of timesteps per 'period'
+ Job xbgjk: Entry is set to '1728'
+ Job xbjim: Entry is set to '144'
+Entry box: Input ranges of levels and specify time weights
+ Job xbgjk: Entry is set to '30'
+ Job xbjim: Entry is set to '2'
+
+Difference in window atmos_Science_Onlevel
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Level-by-level Constants, Physical Constants
+Differences in Table Parameter on wet levels
+ 1,15c1,18
+<  1 1 0.960
+<  2 2 0.940
+<  3 3 0.920
+<  4 4 0.900
+<  5 5 0.890
+<  6 6 0.880
+<  7 7 0.870
+<  8 8 0.860
+<  9 9 0.850
+<  10 10 0.840
+<  11 11 0.840
+<  12 12 0.830
+<  13 13 0.820
+<  14 14 0.810
+<  15 70 0.800
+---
+>  1 1 0.920
+>  2 2 0.918
+>  3 3 0.916
+>  4 4 0.912
+>  5 5 0.908
+>  6 6 0.903
+>  7 7 0.898
+>  8 8 0.891
+>  9 9 0.885
+>  10 10 0.877
+>  11 11 0.869
+>  12 12 0.859
+>  13 13 0.850
+>  14 14 0.839
+>  15 15 0.828
+>  16 16 0.815
+>  17 17 0.803
+>  18 70 0.800
+
+
+Difference in window atmos_Science_Physics
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> General Physics Constants
+Entry box: Number of boundary layer levels
+ Job xbgjk: Entry is set to '69'
+ Job xbjim: Entry is set to '50'
+
+Difference in window atmos_Science_Methox
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Water vapour production by methane oxidation
+Check box: Use methane oxidation?
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Model top boundary (in m)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '80000.00'
+
+Difference in window atmos_Science_Section_SW
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 1: SW Radiation
+Entry box: Minimum albedo of sea ice
+ Job xbgjk: Entry is set to '0.50'
+ Job xbjim: Entry is set to '0.60'
+Entry box: Number of times a day to calculate increments (Diagnostic)
+ Job xbgjk: Entry is set to '288'
+ Job xbjim: Entry is set to '24'
+Entry box: Temperature range over which the albedo varies linearly between max and min values
+ Job xbgjk: Entry is set to '5.00'
+ Job xbjim: Entry is set to '10.00'
+Radio button: Terrain shading and LW sky-view correction
+ Job xbgjk: Entry is set to 'Using ancillary unfiltered orography'
+ Job xbjim: Entry is set to 'Not used'
+Entry box: Number of times per day to calculate increments (Prognostic)
+ Job xbgjk: Entry is set to '96'
+ Job xbjim: Entry is set to '8'
+
+Difference in window atmos_Science_Section_SWGen2
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 1: SW Radiation
+           -> Follow on window
+Entry box: Directory
+ Job xbgjk: Entry is set to '${UM_RAD_SPECTRAL_QV}'
+ Job xbjim: Entry is set to '${UM_RAD_SPECTRAL_GL}/ga3_1'
+
+Difference in window atmos_Science_Section_SWCloud
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 1: SW Radiation
+           -> Cloud in SW Radiation
+Check box: Use Scaling for cloud inhomogenities
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Partition convective cloud using the local temperature?
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Radio button: Select option for overlapping clouds
+ Job xbgjk: Entry is set to 'Maximum Random Overlap (MRO)'
+ Job xbjim: Entry is set to 'McICA sampling of generated cloud'
+Differences in Table Cloud Inhomogeneties
+ 1,4d0
+<  0.70000
+<  1.00000
+<  0.50000
+<  0.50000
+
+Entry box: Type number for ice crystals in convective clouds
+ Job xbgjk: Entry is set to '9'
+ Job xbjim: Entry is set to '8'
+Entry box: Type number for ice crystals in stratiform clouds
+ Job xbgjk: Entry is set to '9'
+ Job xbjim: Entry is set to '8'
+Entry box: Decorrelation pressure scale for stratiform cloud
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '10000.000'
+Entry box: McICA sampling method
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2'
+Entry box: Normalised cloud condensate standard deviation
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.750'
+
+Difference in window atmos_Science_Section_LW
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 2: LW Radiation
+Entry box: Number of times a day to calculate increments (Diagnostic)
+ Job xbgjk: Entry is set to '288'
+ Job xbjim: Entry is set to '24'
+Entry box: Number of times a day to calculate increments (Prognostic)
+ Job xbgjk: Entry is set to '96'
+ Job xbjim: Entry is set to '8'
+
+Difference in window atmos_Science_Section_LWGen2
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 2: LW Radiation
+           -> Follow on window
+Radio button: Enter treatment of scattering
+ Job xbgjk: Entry is set to 'Approximate'
+ Job xbjim: Entry is set to 'Full'
+Entry box: Directory:
+ Job xbgjk: Entry is set to '${UM_RAD_SPECTRAL_QV}/'
+ Job xbjim: Entry is set to '${UM_RAD_SPECTRAL_GL}/ga3_1'
+
+Difference in window atmos_Science_Section_LWCloud
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 2: LW Radiation
+           -> Cloud in LW Radiation
+Check box: Use Scaling for cloud inhomogenities
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Use Hogan solver for multiple regions
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Partition convective cloud using the local temperature?
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Using Microphysics in the longwave
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Radio button: Select option for overlapping clouds
+ Job xbgjk: Entry is set to 'Maximum Random Overlap (MRO)'
+ Job xbjim: Entry is set to 'McICA sampling of generated cloud'
+Differences in Table Cloud Inhomogeneties
+ 1,4d0
+<  0.70000
+<  1.00000
+<  0.50000
+<  0.50000
+
+Entry box: Type number for ice crystals in convective clouds
+ Job xbgjk: Entry is set to '9'
+ Job xbjim: Entry is set to '8'
+Entry box: Type number for ice crystals in stratiform clouds
+ Job xbgjk: Entry is set to '9'
+ Job xbjim: Entry is set to '8'
+
+Difference in window atmos_Science_Section_BLay
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 3: Boundary Layer and Surface Processes
+Radio button: Choose version 
+ Job xbgjk: Entry is set to '<9B> 8B Boundary-layer scheme with the JULES land-surface model'
+ Job xbjim: Entry is set to '<9C> 8C Boundary layer scheme with the JULES land surface model'
+Radio button: Select unstable stability functions:
+ Job xbgjk: Entry is set to 'Conventional LEM'
+ Job xbjim: Entry is set to 'Original UM'
+Check box: Include effect of convective downdraughts on surface exchange
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Options for correcting Monin-Obukhov surface exchange calculations
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '1'
+Check box: Include heating arising from frictional dissipation of turbulence
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Mixing lengths in RiSc not reduced above boundary layer (global operational setting)
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Use enhanced mixing length in Richardson no. Scheme (global operational setting)
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Enter free atmospheric turbulent mixing option (see help)
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '1'
+Radio button: Select type of stable boundary layer mixing scheme
+ Job xbgjk: Entry is set to 'SHARPEST function (RiSc)'
+ Job xbjim: Entry is set to 'SHARPEST over sea; Long tails over land (RiSc)'
+Check box: Make surface exchange consistent with flux differencing.
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Radio button: Use a stability dependent stable Prandtl number
+ Job xbgjk: Entry is set to 'On'
+ Job xbjim: Entry is set to 'Off'
+Entry box: Enter option for including the effects of unresolved drainage flows (see help)
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '0'
+Entry box: Enter value of buoyancy flux threshold for decoupling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.10'
+Check box: Enhance entrainment mixing in stratocumulus over cumulus
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_LSurf
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 3: Boundary Layer and Surface Processes
+           -> Follow on window Land Surface
+Radio button: Select thermal vegetation canopy 
+ Job xbgjk: Entry is set to 'Radiative coupling, thermal capacity and canopy snow'
+ Job xbjim: Entry is set to 'Radiative coupling and thermal capacity'
+Check box: Include orographic drag stability dependence
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Include anthropogenic heat source?
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Radio button: Select number of land surface tiles
+ Job xbgjk: Entry is set to '9'
+ Job xbjim: Entry is set to '1'
+Entry box: Set orographic form drag coefficient
+ Job xbgjk: Entry is set to '0.01'
+ Job xbjim: Entry is set to '0.15'
+Check box: Use an additional iteration in the implicit solver for melting snow
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_SurfType
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 3: Boundary Layer and Surface Processes
+           -> Follow on window Land Surface
+             -> Surface Type Parameters
+Differences in Table Non-Vegetation Surface Type Parameters
+ 2c2
+<  Water 6.00000e-02 6.00000e-02 0.00000e+00 0.00000e+00 0.00000e+00
+---
+>  Water 8.00000e-01 6.00000e-02 0.00000e+00 0.00000e+00 0.00000e+00
+
+Differences in Table Plant Functional Type Surface Parameters
+ 1,5c1,5
+<  BT 1.50000e-01 3.00000e-01 1.00000e-01 5.00000e-02 5.00000e-01
+<  NT 1.50000e-01 3.00000e-01 1.00000e-01 5.00000e-02 5.00000e-01
+<  C3G 6.00000e-01 8.00000e-01 2.00000e-01 1.00000e-01 5.00000e-01
+<  C4G 6.00000e-01 8.00000e-01 2.00000e-01 1.00000e-01 5.00000e-01
+<  S 4.00000e-01 8.00000e-01 2.00000e-01 1.00000e-01 5.00000e-01
+---
+>  BT 1.50000e-01 3.00000e-01 1.43000e-01 5.00000e-02 5.00000e-01
+>  NT 1.50000e-01 3.00000e-01 8.80000e-02 5.00000e-02 5.00000e-01
+>  C3G 6.00000e-01 8.00000e-01 1.92000e-01 1.00000e-01 5.00000e-01
+>  C4G 6.00000e-01 8.00000e-01 1.59000e-01 1.00000e-01 5.00000e-01
+>  S 4.00000e-01 8.00000e-01 1.15000e-01 1.00000e-01 5.00000e-01
+
+Differences in Table Non-Vegetation Surface Type Parameters continued...
+ 2,3c2,3
+<  Water 1.00000e+00 1.00000e-04 4.18000e+06 1.00000e+00
+<  Soil 1.00000e-01 1.00000e-03 0.00000e+00 0.00000e+00
+---
+>  Water 1.00000e+00 3.00000e-04 0.00000e+00 0.00000e+00
+>  Soil 1.00000e-01 3.20000e-03 0.00000e+00 0.00000e+00
+
+
+Difference in window atmos_Science_Section_SSurf
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 3: Boundary Layer and Surface Processes
+           -> Follow on window Sea Surface
+Entry box: Charnock parameter for roughness length over sea points
+ Job xbgjk: Entry is set to '0.0110'
+ Job xbjim: Entry is set to '0.0180'
+
+Difference in window atmos_Science_Section_LSRain
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 4: Large Scale Precipitation
+Radio button: Choose drizzle and rain representation
+ Job xbgjk: Entry is set to 'Explicitly define parameters (see Help)'
+ Job xbjim: Entry is set to 'Standard rain and autoconversion parameters (recommended)'
+Entry box: Set collision/coalescence efficiency (ec_auto)
+ Job xbgjk: Entry is set to '0.5500'
+ Job xbjim: Entry is inactive
+Check box: Enable tapering of cloud droplets towards surface
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Run with multiple iterations of the precipitation scheme
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Could not find LSR2GRAUP in window atmos_Science_Section_LSRain
+ Job xbgjk: Y
+ Job xbjim: Entry is inactive
+Check box: Use autoconversion formulation based on Tripoli and Cotton formulation
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Use the murk aerosol to calculate droplet number
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+Check box: Include prognostic graupel
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Entry box: Surface droplet number concentration (per cubic metre)
+ Job xbgjk: Entry is set to '7.5e+07'
+ Job xbjim: Entry is inactive
+Entry box: Set default droplet concentration over land / m-3 (ntot_land)
+ Job xbgjk: Entry is set to '3.0000e+08'
+ Job xbjim: Entry is inactive
+Entry box: Set default droplet concentration over sea / m-3 (ntot_sea)
+ Job xbgjk: Entry is set to '1.0000e+08'
+ Job xbjim: Entry is inactive
+Entry box: X1R
+ Job xbgjk: Entry is set to '2.2000e-01'
+ Job xbjim: Entry is inactive
+Entry box: X2R
+ Job xbgjk: Entry is set to '2.2000'
+ Job xbjim: Entry is inactive
+Entry box: X4R
+ Job xbgjk: Entry is set to '0.0000'
+ Job xbjim: Entry is inactive
+Entry box: Select Altitude below which to taper in metres
+ Job xbgjk: Entry is set to '150.0'
+ Job xbjim: Entry is inactive
+Check box: Hardwire autoconversion limits based on droplet number assumptions from Bower and Choularton (1992)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Entry box: Number of substeps over each level
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '5'
+
+Difference in window atmos_Science_Section_LSRain2
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 4: Large Scale Precipitation
+           -> Follow on window Large Scale Precipitation
+Entry box: Aggregate mass scaling, AI
+ Job xbgjk: Entry is set to '2.3000e-02'
+ Job xbjim: Entry is set to '1.8500e-02'
+Entry box: Crystal mass scaling, AIC
+ Job xbgjk: Entry is set to '2.3000e-02'
+ Job xbjim: Entry is set to '1.8500e-02'
+Entry box: Aggregate mass exponent, BI
+ Job xbgjk: Entry is set to '2.0000e+00'
+ Job xbjim: Entry is set to '1.9000e+00'
+Entry box: Crystal mass exponent, BIC
+ Job xbgjk: Entry is set to '2.0000e+00'
+ Job xbjim: Entry is set to '1.9000e+00'
+Entry box: Aggregate Best scaling, LSP_EI
+ Job xbgjk: Entry is set to '1.561020e-01'
+ Job xbjim: Entry is set to '2.072000e-01'
+Entry box: Crystal Best scaling, LSP_EIC
+ Job xbgjk: Entry is set to '1.561020e-01'
+ Job xbjim: Entry is set to '6.049000e-02'
+Entry box: Aggregate Best exponent, LSP_FI
+ Job xbgjk: Entry is set to '6.6809e-01'
+ Job xbjim: Entry is set to '6.3800e-01'
+Entry box: Crystal Best exponent, LSP_FIC
+ Job xbgjk: Entry is set to '6.6809e-01'
+ Job xbjim: Entry is set to '8.3100e-01'
+Check box: Use generic ice particle size distribution
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Radio button: Choose generic ice p.s.d version
+ Job xbgjk: Entry is set to 'Global version'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_Science_Section_Conv
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 5: Convection
+Radio button: Choice of detrainment scheme
+ Job xbgjk: Entry is set to 'Default Gregory-Rowntree scheme'
+ Job xbjim: Entry is set to 'Smoothed adaptive detrainment, deep and mid convection.'
+Entry box: Sub cloud mixing method
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '1'
+Radio button: Choice of CAPE closure scheme
+ Job xbgjk: Entry is set to 'RH based CAPE buoyancy closure'
+ Job xbjim: Entry is set to 'Vertical velocity dependent CAPE closure'
+Entry box: Number of convection calls per physics timestep
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '2'
+Radio button: Choose convection option
+ Job xbgjk: Entry is set to 'Convection turned off (only for idealised cases). Please see conv_diag panel. Some options may still influence Boundary layer.'
+ Job xbjim: Entry is set to 'Time level n* data, increments not advected (Recommended)'
+Entry box: Downdraught version
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '1'
+Entry box: Deep CMT option
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '5'
+Entry box: Parameter controlling mid-level and deep entrainment
+ Job xbgjk: Entry is set to '1.0'
+ Job xbjim: Entry is set to '0.90'
+Check box: Click for deep CMT to use KTERM instead of NTPAR
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Limit initial parcel perturbation option
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '2'
+Entry box: Minimum pressure for mid level convection (Pa)
+ Job xbgjk: Entry is set to '0.00'
+ Job xbjim: Entry is set to '10000.00'
+Check box: Use revised shallow cumulus parcel perturbations
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Use new termination condition for deep and mid-level convection
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Parameter controlling deep mixing detrainment
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1.50'
+Entry box: Highest model level for rescaling parametrized convection
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '50'
+Entry box: Parameter controlling adaptive detrainment
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.7500'
+Entry box: Threshold vertical velocity
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.4'
+
+Difference in window atmos_Science_Section_Conv2
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 5: Convection
+           -> Follow on window Convection
+Entry box: Critical convective cloud condensate option
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '2'
+Check box: Use 3D CCA cloud field
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Use CCRad
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Use a phase change temperature in the plume other than 0 deg C
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Apply time decay of convective clouds
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '2'
+Entry box: Defining anvil factor
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1.0000'
+Entry box: Anvil profile basis
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: CCA scaling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00'
+Entry box: CCA scaling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00'
+Entry box: CCA scaling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00'
+Entry box: CCW Scaling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00'
+Entry box: CCW Scaling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00'
+Entry box: CCW Scaling
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00'
+Entry box: Cloud Decay lifetime option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Check box: With radiative representation of anvils included.
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Entry box: Estimate saturation specific humidity at this phase change T / kg kg-1 (qstice). See Help.
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3.5000e-03'
+Entry box: Specify phase change temperature / K (Tice)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '263.1500'
+Entry box: Defining tower factor
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1.0000'
+
+Difference in window atmos_Science_Section_ConvDiag
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 5: Convection
+           -> Follow on window Convective Diagnosis
+Entry box: Convective diagnosis method
+ Job xbgjk: Entry is set to '5'
+ Job xbjim: Entry is set to '7'
+Entry box: Std Dev level 1 virtual temperature option
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is set to '1'
+
+Difference in window atmos_Science_Section_GWD
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 6: Gravity Wave Drag
+Entry box: Critical Froude Number
+ Job xbgjk: Entry is set to '1.00'
+ Job xbjim: Entry is set to '4.00'
+Check box: Include spectral gravity wave scheme
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Surface gravity wave constant
+ Job xbgjk: Entry is set to '1.00e+00'
+ Job xbjim: Entry is set to '3.30e+03'
+Check box: Use Opaque model lid condition
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Entry box: Factor enhancement for wave launch amplitude
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1.5000'
+
+Difference in window atmos_Science_Section_Hydrol
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 8: Hydrology
+Entry box: Shape factor B for PDM
+ Job xbgjk: Entry is set to '0.40'
+ Job xbjim: Entry is inactive
+Entry box: Assumed soil depth in PDM (m)
+ Job xbgjk: Entry is set to '0.50'
+ Job xbjim: Entry is inactive
+Check box: Probability Distributed Moisture hydrology scheme (PDM)
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Downward flow for super saturated soil water
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_Cloud
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 9: Large Scale Cloud
+Hidden variable: Method of cloud area parametrization
+ Job xbgjk: Variable is set to '1'
+ Job xbjim: Entry is inactive
+Check box: Explicitly set overlap between liquid and ice phases
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is inactive
+Check box: Including cloud area parametrization (Gen2 Rad only)
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Use empirically adjusted cloud fraction parametrization
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+Check box: Use prognostic cloud scheme PC2?
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Enter value of cloud erosion / s-1
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-4.50e-05'
+Entry box: Method for creating liquid cloud fraction when supersaturated in pc2_checks (0,1,2)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2'
+Check box: Ensure a minimum in-cloud ice water content
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Ensure consistent sinks of qcl and CFL
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_Adj
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 10: Dynamical Solver
+Radio button: Choose version
+ Job xbgjk: Entry is set to '<2B> Recommended solver (essential for variable resolution). May not bit-reproduce 2A option.'
+ Job xbjim: Entry is set to '<2A> GCR Solver used to solve Helmholtz Equation'
+Entry box: Absolute tolerance value
+ Job xbgjk: Entry is set to '1.000e-03'
+ Job xbjim: Entry is set to '1.000e-02'
+Radio button: Print diagnostics from GCR-solver
+ Job xbgjk: Entry is set to '<3> average iterations over timestep intervals'
+ Job xbjim: Entry is set to '<1> Initial + final residual + number of iterations'
+Entry box: 1st interval ends timestep
+ Job xbgjk: Entry is set to '72'
+ Job xbjim: Entry is inactive
+Entry box: 2nd interval ends timestep
+ Job xbgjk: Entry is set to '216'
+ Job xbjim: Entry is inactive
+Entry box: 3rd interval ends timestep and repeats
+ Job xbgjk: Entry is set to '432'
+ Job xbjim: Entry is inactive
+Entry box: Maximum number of iterations
+ Job xbgjk: Entry is set to '200'
+ Job xbjim: Entry is set to '500'
+Check box: Use last soln as initial guess after 1st cycle
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Radio button: Select preconditioner
+ Job xbgjk: Entry is set to '<1>: Vertical Preconditioner'
+ Job xbjim: Entry is set to '<4>: 1 iteration of <1> followed by XZ ADI (global only)'
+Check box: Add full solution for ADI
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Entry box: Size of ADI pseudo timestep
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.00015'
+Entry box: Number of preconditioner calls
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+
+Difference in window atmos_Science_Section_Atradv
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 11: Atmospheric Tracer Advection
+Check box: Advect the tracers using a conservative scheme
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_Advec
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 12: Primary Field Advection
+Differences in Table Semi-Lagrangian Advection Settings
+ 1,2c1,2
+<  Theta 1 1
+<  Moisture/tracers 1 1
+---
+>  Theta 0 1
+>  Moisture/tracers 1 7
+
+Check box: Use 2D vector coordinate geometry
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Use mixing ratios for the moisture variables inside the dynamics
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Add waterloading terms if using specific humidities (Operational models only)
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Height (m) up to which a monotone limiter is applied to advection of theta
+ Job xbgjk: Entry is set to '1.00000e+03'
+ Job xbjim: Entry is set to '2.50000e+02'
+Entry box: Vertical interpolation search tolerance
+ Job xbgjk: Entry is set to '28'
+ Job xbjim: Entry is set to '22'
+
+Difference in window atmos_Science_Section_DiffFilt
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 13: Diffusion, Filtering and Moisture resetting
+Entry box: Start level
+ Job xbgjk: Entry is set to '30'
+ Job xbjim: Entry is set to '50'
+Radio button: Horizontal Diffusion
+ Job xbgjk: Entry is set to 'Subgrid turbulence scheme'
+ Job xbjim: Entry is set to 'Off'
+Radio button: Polar Filter
+ Job xbgjk: Entry is set to 'No polar filter'
+ Job xbjim: Entry is set to 'Combined diffusion/filtering'
+Check box: Using Moisture resetting (QPOS)
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Radio button: Tracer reset method
+ Job xbgjk: Entry is set to 'Local'
+ Job xbjim: Entry is set to 'Level'
+Radio button: Vertical Diffusion
+ Job xbgjk: Entry is set to 'Off'
+ Job xbjim: Entry is set to 'Ramped (operational)'
+Check box: Ramp additional upper-level horizontal diffusion coefficient
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Radio button: Moisture reset method
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Level'
+Entry box: Horizontal level (32 is recommended for global 38/50 levels)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '50'
+Entry box: End level for additional upper-level horizontal diffusion
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '70'
+Entry box: Start level for additional upper-level horizontal diffusion
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '71'
+
+Difference in window atmos_Science_Section_VertDiffCoef
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 13: Diffusion, Filtering and Moisture resetting
+           -> Follow on Window
+Differences in Table Vertical Diffusion coefficients
+ 1,3c1,3
+<  Theta 0.0 24 26
+<  Wind 0.0 24 26
+<  q 0.0 22 37
+---
+>  Theta 0.000 40 44
+>  Wind 5.000 29 42
+>  q 0.000 37 61
+
+Entry box: Latitude to start ramp diffusion (default for operational is 30.0 degrees):
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '30.0'
+
+Difference in window atmos_Science_Section_TargDiff
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 13: Diffusion, Filtering and Moisture resetting
+           -> Follow on Window
+Check box: Targeted diffusion of moisture
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Targeted diffusion apply end level
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '70'
+Entry box: Targeted diffusion vertical velocity test value
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1.5'
+Entry box: Targeted diffusion factor
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.10'
+Entry box: Targeted diffusion test start level
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '5'
+Entry box: Horizontal level to switch off steep slope diffusion
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '50'
+
+Difference in window atmos_Science_Section_DiagPrn
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 13: Diffusion, Filtering and Moisture resetting
+           -> Follow on Window
+Check box: Flush print buffer if run fails
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Print maximum horizontal winds
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Two norm end level
+ Job xbgjk: Entry is set to '70'
+ Job xbjim: Entry is set to '50'
+Entry box: Printing frequency (number of timesteps)
+ Job xbgjk: Entry is set to '18'
+ Job xbjim: Entry is set to '1'
+Entry box: Vertical velocity print test value
+ Job xbgjk: Entry is set to '1.5'
+ Job xbjim: Entry is set to '1.0'
+
+Difference in window atmos_Science_Section_DiffFilt_Combi
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 13: Diffusion, Filtering and Moisture resetting
+           -> Follow on Window
+Entry box: Reference diffusion coefficient
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.000'
+Entry box: Diffusion order theta/w
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Diffusion order wind
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Diffusion timescale theta/w (number of timesteps)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '72'
+Entry box: Diffusion timescale wind (number of timesteps)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '72'
+Check box: Diffusion of w
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Diffusion of horizontal winds
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Automatic calculation of diffusion coefficients
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Diffusion of theta
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Polar filter increments
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Polar filter theta
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Polar filter horizontal winds
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Polar filter w
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Latest filtering and diffusion code (recommended)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Entry box: Polar filter start latitude (87.0 recommended)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '87.000'
+Entry box: Scale ratio (2.0 recommended)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2.000'
+
+Difference in window atmos_Science_Section_Subgrid
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 13: Diffusion, Filtering and Moisture resetting
+           -> Subgrid Turbulence Scheme
+Entry box: Fraction of maximum diffusion
+ Job xbgjk: Entry is set to '0.25'
+ Job xbjim: Entry is inactive
+Check box: Apply in vertical (1D)
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is inactive
+Entry box: Mixing length constant
+ Job xbgjk: Entry is set to '0.20'
+ Job xbjim: Entry is inactive
+Entry box: End level
+ Job xbgjk: Entry is set to '69'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_Science_Section_Aero
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 17: Aerosols
+Radio button: Choose the relevant section release
+ Job xbgjk: Entry is set to '<0A> Aerosol Modelling not included.'
+ Job xbjim: Entry is set to '<2B> CLASSIC Aerosol Modelling included'
+Check box: With the Prognostic Mineral Dust Scheme
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+Check box: Use non-hydrostatic weights in sl_tracer1
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_Aero_Dust
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 17: Aerosols
+           -> Mineral Dust
+Entry box: Tuning factor by which to multiply U*
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2.20'
+Entry box: Global tuning factor by which to multiply dust emissions
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.70'
+Radio button: Dust emission and transport uses
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2 size divisions, constant emission size distribution'
+Entry box: Tuning factor by which to multiply level 1 soil moisture
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0.30'
+
+Difference in window atmos_Science_Section_AeroClim
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 17: Aerosols
+           -> Aerosol Climatologies
+Radio button: Select the option of climatological aerosols (affects both the LW and SW code)
+ Job xbgjk: Entry is set to 'Use all components of Cusack climatological aerosol included'
+ Job xbjim: Entry is set to 'Only use Stratospheric Cusack climatological aerosol components (as used in HadGEM1)'
+Check box: Include Biomass-burning aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include Black Carbon aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include Delta aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include Dust aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include Org. Carbon (Fossil Fuel) aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include Sea-salt aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include Sulphate aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Include biogenic aerosol climatology
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: number of levels
+ Job xbgjk: Entry is set to '30'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_Science_Section_Aero_Effects
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 17: Aerosols
+           -> Aerosol Effects
+Check box: Enable aerosol optical depths diagnostics?
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Check box: Mineral Dust aerosol: DIRECT radiative effect (SW+LW)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ON'
+
+Difference in window atmos_Science_Section_Ozone
+ -> Model Selection
+   -> Atmosphere
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section     Ozone
+Radio button: Select option for the ozone treatment in radiation
+ Job xbgjk: Entry is set to 'Impose prescribed 3D field'
+ Job xbjim: Entry is set to 'Impose prescribed 2D field'
+
+Difference in window atmos_InFiles_Start
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Start dump
+Entry box: and file name
+ Job xbgjk: Entry is set to 'ic.rec'
+ Job xbjim: Entry is set to 'dump.rec'
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is set to '/g/sc/flush/yix/xblcf'
+ Job xbjim: Entry is set to '$WORKDIR/t/2012080600/run/staging'
+
+Difference in window atmos_InFiles_Options_Headers
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> In file related options
+         -> Header record sizes
+Entry box: Ancil Headers
+ Job xbgjk: Entry is set to '300'
+ Job xbjim: Entry is set to '1000'
+Entry box: LBC Headers
+ Job xbgjk: Entry is set to '160'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_InFiles_PAncil_Ozone
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Ozone
+Radio button: Ozone ancillary field to be
+ Job xbgjk: Entry is set to 'Configured'
+ Job xbjim: Entry is set to 'Not Used'
+Entry box: and file name
+ Job xbgjk: Entry is set to 'qrclim.ozone_L70_O35'
+ Job xbjim: Entry is inactive
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is set to '$ANCIL'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_InFiles_PAncil_Soilm
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Soil moisture and snow depth
+Entry box: and file name
+ Job xbgjk: Entry is set to 'qrclim.smow'
+ Job xbjim: Entry is inactive
+Entry box: Directory name or Environment Variable
+ Job xbgjk: Entry is set to '$ANCIL_5p3'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_InFiles_PAncil_Soil
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Soil : VSMC, hydrological/thermal conductivity etc.
+Entry box: and file name
+ Job xbgjk: Entry is set to 'qrparm.soil'
+ Job xbjim: Entry is inactive
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is set to '$ANCIL_5p3'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_InFiles_PAncil_VegFrac
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Vegetation Distribution: Area and structure.
+Radio button: Leaf area index of plant functional types to be:
+ Job xbgjk: Entry is set to 'Not used'
+ Job xbjim: Entry is set to 'Configured'
+Radio button: Canopy height of plant functional types to be:
+ Job xbgjk: Entry is set to 'Not used'
+ Job xbjim: Entry is set to 'Configured'
+Entry box: and file name
+ Job xbgjk: Entry is set to 'qrparm.veg.frac_ite'
+ Job xbjim: Entry is set to 'qrparm.veg.frac'
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is set to '$ANCIL'
+ Job xbjim: Entry is set to '$ANCILDIR'
+Entry box: and file name
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'qrparm.veg.func'
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '$ANCILDIR'
+
+Difference in window atmos_InFiles_PAncil_AeroClim
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Climatologies & potential climatologies
+         -> Aerosol Clim Ancils
+Radio button: Biogenic aerosol climatology file to be
+ Job xbgjk: Entry is set to 'Not Used'
+ Job xbjim: Entry is set to 'Configured'
+Radio button: Biomass-burning (fresh) aerosol climatology to be
+ Job xbgjk: Entry is set to 'Not Used'
+ Job xbjim: Entry is set to 'Configured'
+Radio button: Sulphate aerosol climatology to be
+ Job xbgjk: Entry is set to 'Not Used'
+ Job xbjim: Entry is set to 'Configured'
+Entry box: and file name
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'qrclim.biog70'
+Entry box: and file name
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'qrclim.biom70'
+Entry box: and file name
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'qrclim.sulp70'
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '$ANCILDIR'
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '/access/umdir/ancil/n512_ps27_test/biom'
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '$ANCILDIR_PS27'
+
+Difference in window atmos_InFiles_OtherAncil_LBC
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Other ancillary files and Lateral Boundary files
+         -> Lateral boundary conditions
+Hidden variable: Hidden variable: LBC section 31 - Is this an atmosphere LAM model
+ Job xbgjk: Variable is set to '1A'
+ Job xbjim: Variable is set to '0A'
+Entry box: and file name
+ Job xbgjk: Entry is set to 'lbc6.2013020215'
+ Job xbjim: Entry is inactive
+Check box: Use latest LBC algorithm (only works with 2B dynamical solver)
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+Check box: Input LBCs include cloud fractions
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is inactive
+Check box: Change Exner in LBCs to balance the vertical momentum equation (see Help)
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+Entry box: Directory holding first lateral boundary file: 
+ Job xbgjk: Entry is set to '/g/sc/data/yix/testdata/ukv'
+ Job xbjim: Entry is inactive
+Differences in Table General RIMWIDTH table
+ 2,5d1
+<  1.000
+<  1.000
+<  1.000
+<  1.000
+
+
+Difference in window atmos_InFiles_OtherAncil_Orog
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Other ancillary files and Lateral Boundary files
+         -> Orography ancillary file and fields
+Check box: The ancillary orography to be configured
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: The unfiltered orography to be configured
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Entry box: and file name
+ Job xbgjk: Entry is set to 'qrparm.orog'
+ Job xbjim: Entry is inactive
+Entry box: Enter directory or Environment Variable
+ Job xbgjk: Entry is set to '$ANCIL'
+ Job xbjim: Entry is inactive
+Entry box: Width of blending zone
+ Job xbgjk: Entry is set to '15'
+ Job xbjim: Entry is inactive
+Differences in Table Blending Zone Table
+ 1,15d0
+<  1.000
+<  1.000
+<  1.000
+<  1.000
+<  1.000
+<  1.000
+<  1.000
+<  1.000
+<  0.875
+<  0.750
+<  0.625
+<  0.500
+<  0.375
+<  0.250
+<  0.125
+
+
+Difference in window atmos_InFiles_OtherAncil_LSMask
+ -> Model Selection
+   -> Atmosphere
+     -> Ancillary and input data files
+       -> Other ancillary files and Lateral Boundary files
+         -> Land-Sea-Mask ancillary file and fields
+Check box: The ancillary Land-Sea_mask to be configured
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Entry box: and file name
+ Job xbgjk: Entry is set to 'qrparm.mask'
+ Job xbjim: Entry is inactive
+Entry box: Enter directory or environment variable
+ Job xbgjk: Entry is set to '$ANCIL'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_STASH_tcl
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+Hidden variable: Domain profile column of diagnostics table
+ Job xbgjk: Variable is set to 'mrholev mrholev mrholev mrholev mrholev mrholev mrholev mrholev mthetlev mrholev mthetlev mthetlev mthetlev mrholev mthetlev mthetlev mthetlev slv slv slv slv slv slv slv slv slv slv slv slv mdlslv slv mthetlev mrholev mthetlev lbctheta mthetlev mrholev mrholev mthetlev mthetlev mthetlev lbcrho mrholev mrholev lbctheta mrholev mthetlev mthetlev mthetlev mrholev mthetlev mthetlev mthetlev mrholev mthetlev mthetlev mthetlev mthetlev mthetlev mthetlev mthetlev mthetlev mrholev mrholev mrholev mthetlev mthetlev mthetlev slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv_sfc slv_sfc slv_sfc slv_sfc slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv mrholev mthetlev mthetlev mrholev mthetlev mthetlev slv slv slv slv slv slv slv soill soill soill soill soill soill slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv slv mthetlev mrholev prslevs prslevs prslevs mrholev mthetlev mthetlev prslevs prslevs slv slv slv slv slv prslevs'
+ Job xbjim: Entry is unset
+Hidden variable: Include column of diagnostics table
+ Job xbgjk: Variable is set to 'Y N N Y Y N N Y N Y N N Y Y N N Y Y Y Y Y Y Y Y Y Y Y Y Y N Y N Y N N Y N Y N N Y N N N N Y N Y N Y N N Y Y N N Y N N Y N Y Y N Y Y N Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y N Y N Y Y N Y Y N Y Y Y Y Y Y Y Y Y N Y Y N Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y Y N N Y Y Y Y N Y Y Y Y Y Y Y Y Y'
+ Job xbjim: Entry is unset
+Hidden variable: Section column of diagnostics table
+ Job xbgjk: Variable is set to '0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 2 2 2 2 2 2 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 4 4 4 4 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 8 8 8 8 8 8 8 8 8 8 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 15 15 15 15 15 16 16 16 16 16 16 16 16 16 16 16'
+ Job xbjim: Entry is unset
+Hidden variable: Item column of diagnostics table
+ Job xbgjk: Variable is set to '2 2 2 2 3 3 3 3 4 10 10 10 10 12 12 12 12 24 24 24 25 25 26 26 30 30 31 31 33 33 33 90 150 150 150 150 253 254 254 254 254 255 256 257 258 265 265 265 266 267 267 267 267 268 268 268 268 271 272 272 273 273 407 407 407 408 408 408 409 409 409 201 201 207 207 235 235 201 201 205 205 207 207 209 209 209 209 209 210 210 210 210 210 217 217 217 217 223 229 229 232 232 234 234 234 234 236 236 236 236 236 236 236 236 236 237 237 237 237 237 247 248 250 250 250 253 281 282 283 284 285 460 460 460 460 461 461 461 461 463 465 465 468 473 201 201 201 202 202 201 201 202 202 207 207 208 208 212 212 212 213 213 213 226 226 226 208 208 209 209 223 223 223 225 225 225 203 203 204 204 205 205 208 209 210 211 212 213 214 215 217 217 217 101 102 201 202 242 4 4 4 202 203 222 222 222 222 222 256'
+ Job xbjim: Entry is unset
+Hidden variable: Time profile column of diagnostics table
+ Job xbgjk: Variable is set to 'anal gmdlinst lbct mdlinst anal gmdlinst lbct mdlinst lbct anal gmdlinst lbct mdlinst anal gmdlinst lbct mdlinst anal anal10 slvinst anal slvinst anal slvinst anal slvinst anal slvinst anal lbct slvinst lbct anal gmdlinst lbct mdlinst lbct anal gmdlinst lbct mdlinst lbct lbct lbct lbct anal gmdlinst mdlinst lbct anal gmdlinst lbct mdlinst anal gmdlinst lbct mdlinst lbct lbct mdlinst lbct mdlinst anal gmdlinst mdlinst anal gmdlinst mdlinst anal anal10 slvinst analmean slvmean analmean slvmean analmean slvmean analmean slvmean analmean slvmean analmean slvmean anal anal10 analmean slvinst slvmean anal anal10 analmean slvinst slvmean anal analmean slvinst slvmean slvxinst analacum slvpacum analmean slvmean anal analmean slvinst slvmean anal anal10 analmax analmean analmin slvinst slvmax slvmean slvmin anal anal10 analmean slvinst slvmean slvxinst slvxinst anal anal10 slvinst slvxinst slvxinst slvxinst slvxinst slvxinst slvxinst anal analmean slvinst slvmean anal analmean slvinst slvmean slvxinst anal slvinst slvxinst slvxinst anacum10 analacum slvpacum analacum slvpacum analacum slvpacum analacum slvpacum gmdlinst mdlinst gmdlinst mdlinst anal gmdlinst mdlinst anal gmdlinst mdlinst anacum10 analacum slvpacum anal slvinst anal slvinst anal gmdlinst slvinst anal gmdlinst slvinst anal slvinst anal slvinst anal slvinst slvxinst slvxinst slvxinst slvxinst slvxinst slvxinst slvxinst slvxinst anal slvinst slvmean oncearun oncearun prsinst prsinst prsinst anal gmdlinst mdlinst prsinst prsinst anal anal10 analmean slvinst slvmean prsinst'
+ Job xbjim: Entry is unset
+Hidden variable: Usage profile column of diagnostics table
+ Job xbgjk: Variable is set to 'analmdl mdl lbcf mdl analmdl mdl lbcf mdl lbcf analmdl mdl lbcf mdl analmdl cldrad lbcf cldrad analslv anslv10 slv analslv slv analslv slv analslv slv analslv slv analslv lbcf slv lbcf analmdl mdl lbcf mdl lbcf analmdl cldrad lbcf cldrad lbcf lbcf lbcf lbcf analmdl cldrad cldrad lbcf analmdl cldrad lbcf cldrad analmdl cldrad lbcf cldrad lbcf lbcf cldrad lbcf cldrad analmdl mdl mdl analmdl mdl mdl analslv anslv10 slv analslv slv analslv slv analslv slv analslv slv analslv slv analslv slv analslv anslv10 analslv slv slv analslv anslv10 analslv slv slv analslv analslv slv slv slv_extr analslv slv analslv slv analslv analslv slv slv analslv anslv10 analslv analslv analslv slv slv slv slv analslv anslv10 analslv slv slv slv_extr slv_extr analslv anslv10 slv slv_extr slv_extr slv_extr slv_extr slv_extr slv_extr analslv analslv slv slv analslv analslv slv slv slv_extr analslv slv slv_extr slv_extr anslv10 analslv slv analslv slv analslv slv analslv slv cldrad cldrad cldrad cldrad analmdl cldrad cldrad analmdl cldrad cldrad anslv10 analslv slv analslv slv analslv slv analslv mdl slv analslv mdl slv analslv slv analslv slv analslv slv slv_extr slv_extr slv_extr slv_extr slv_extr slv_extr slv_extr slv_extr analslv slv slv mdl mdl prs prs prs analmdl mdl mdl prs prs analslv anslv10 analslv slv slv prs'
+ Job xbjim: Entry is unset
+Hidden variable: Number of Diagnostics
+ Job xbgjk: Variable is set to '209'
+ Job xbjim: Variable is set to '0'
+Hidden variable: Number of Domain profiles
+ Job xbgjk: Variable is set to '9'
+ Job xbjim: Variable is set to '29'
+Hidden variable: Number of Time profiles
+ Job xbgjk: Variable is set to '18'
+ Job xbjim: Variable is set to '69'
+Hidden variable: Number of Usage profiles
+ Job xbgjk: Variable is set to '9'
+ Job xbjim: Variable is set to '5'
+
+Difference in window atmos_STASH_Tags
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Diagnostic Packages
+Differences in Table Diagnostic Packages
+ 1,4c1,4
+<  A Blank Blank
+<  B Blank Blank
+<  C Blank Blank
+<  D Blank Blank
+---
+>  A  
+>  B  
+>  C  
+>  D Y Dust Diagnostics
+
+
+Difference in Time Profile 'slvinst' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '9'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '4'
+
+Difference in Time Profile 'slvmean' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Radio button: Specification type 
+ Job xbgjk: Entry is set to 'Regular intervals'
+ Job xbjim: Entry is set to 'Specified List '
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is inactive
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Hours'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is inactive
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+
+Difference in Time Profile 'slvpacum' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '63'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is inactive
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '12'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Days'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is inactive
+
+Difference in Time Profile 'slvmin' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '75'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '12'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Minimum value in a period, specify period and sampling frequency below'
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Hours'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is inactive
+
+Difference in Time Profile 'slvmax' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '63'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '15'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Maximum value in a period, specify period and sampling frequency below'
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Hours'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is inactive
+
+Difference in Time Profile 'mdlinst' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '171'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '6'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '81'
+
+Difference in Time Profile 'prsinst' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '171'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '87'
+
+Difference in Time Profile 'slvxinst' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '75'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '12'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'No time processing. Field valid at output timesteps.'
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is set to 'Hours'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+
+Difference in Time Profile 'anal' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '75'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '6'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '69'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'No time processing. Field valid at output timesteps.'
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+
+Difference in Time Profile 'analacum' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '171'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '6'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '81'
+
+Difference in Time Profile 'gmdlinst' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '171'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '6'
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '126'
+ Job xbjim: Entry is set to '87'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'No time processing. Field valid at output timesteps.'
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+
+Difference in Time Profile 'analmean' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '75'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '12'
+
+Difference in Time Profile 'analmin' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '75'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '12'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Minimum value in a period, specify period and sampling frequency below'
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+
+Difference in Time Profile 'analmax' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '3'
+ Job xbjim: Entry is set to '171'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '6'
+Entry box: Starting 
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is set to '81'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Maximum value in a period, specify period and sampling frequency below'
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+
+Difference in Time Profile 'lbct' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '36'
+ Job xbjim: Entry is inactive
+Radio button: Specification type 
+ Job xbgjk: Entry is set to 'Regular intervals'
+ Job xbjim: Entry is set to 'Specified List '
+Entry box: Starting 
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is set to 'Hours'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '4'
+
+Difference in Time Profile 'anal10' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '12'
+ Job xbjim: Entry is inactive
+Radio button: Specification type 
+ Job xbgjk: Entry is set to 'Regular intervals'
+ Job xbjim: Entry is set to 'Specified List '
+Entry box: Starting 
+ Job xbgjk: Entry is set to '12'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is set to 'Hours'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '32'
+
+Difference in Time Profile 'anacum10' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is set to '27'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '12'
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is set to '-1'
+ Job xbjim: Entry is inactive
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Entry box: Frequency (every)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Entry box: Starting 
+ Job xbgjk: Entry is set to '12'
+ Job xbjim: Entry is set to '15'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Hours'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is inactive
+Radio button: Time units 
+ Job xbgjk: Entry is set to 'Timesteps'
+ Job xbjim: Entry is set to 'Hours'
+
+Difference in Time Profile 'oncearun' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Radio button: Specification type 
+ Job xbgjk: Entry is set to 'Specified List '
+ Job xbjim: Entry is set to 'Regular intervals'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is set to 'No time processing. Field valid at output timesteps.'
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '63'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+
+Difference in Time Profile '' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Time profile window
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '75'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '165'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '72'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '21'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '18'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '21'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '123'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '51'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '99'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '39'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '39'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '39'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '147'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '147'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '21'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '27'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '99'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '165'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '57'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '81'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '165'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '171'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '141'
+Entry box: Ending   
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '141'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '-1'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling period
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Entry box: Sampling offset (0 for no offset) 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '0'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified List '
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Radio button: Specification type 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Regular intervals'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Frequency (every)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '69'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '78'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '81'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '66'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '4'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '6'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '4'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '15'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '75'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '78'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '78'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '111'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '105'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '15'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '9'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '15'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '69'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '93'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '3'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '129'
+Entry box: Starting 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '12'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Entry box: Number of times in the list 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time mean, specify meaning period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Maximum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Time accumulation, specify accumulation period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Maximum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Minimum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Minimum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Maximum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Maximum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Minimum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Minimum value in a period, specify period and sampling frequency below'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Specify time processing required 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No time processing. Field valid at output timesteps.'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Timesteps'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+Radio button: Time units 
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Hours'
+
+Difference in first (LEVS) panel of Domain Profile 'mrholev' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Specification of levels by
+ Job xbgjk: Entry is set to 'Range of model levels'
+ Job xbjim: Entry is inactive
+Radio button: Select vertical level type
+ Job xbgjk: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is set to 'ATMOS_BOTTOM'
+ Job xbjim: Entry is inactive
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is set to 'ATMOS_TOP'
+ Job xbjim: Entry is inactive
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+
+Difference in first (LEVS) panel of Domain Profile 'soill' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Specification of levels by
+ Job xbgjk: Entry is set to 'Range of model levels'
+ Job xbjim: Entry is inactive
+Radio button: Select vertical level type
+ Job xbgjk: Entry is set to 'Variables on deep soil levels'
+ Job xbjim: Entry is set to 'Variables on constant theta surfaces (K)'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is set to 'SOIL_LEVS'
+ Job xbjim: Entry is inactive
+Differences in Table Select real levels
+ 0a1,3
+>  475.000
+>  425.000
+>  315.000
+
+
+Difference in first (LEVS) panel of Domain Profile 'slv_sfc' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Specification of levels by
+ Job xbgjk: Entry is set to 'List of selected model levels'
+ Job xbjim: Entry is set to 'Range of model levels'
+Differences in Table Select Integer Levels
+ 1d0
+<  1
+
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_BOTTOM'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_TOP'
+
+Difference in first (LEVS) panel of Domain Profile 'lbcrho' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Specification of levels by
+ Job xbgjk: Entry is set to 'Range of model levels'
+ Job xbjim: Entry is inactive
+Radio button: Select vertical level type
+ Job xbgjk: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is set to '1'
+ Job xbjim: Entry is inactive
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is set to '71'
+ Job xbjim: Entry is inactive
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+
+Difference in first (LEVS) panel of Domain Profile 'lbctheta' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Specification of levels by
+ Job xbgjk: Entry is set to 'Range of model levels'
+ Job xbjim: Entry is inactive
+Radio button: Select vertical level type
+ Job xbgjk: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is set to '0'
+ Job xbjim: Entry is inactive
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is set to '70'
+ Job xbjim: Entry is inactive
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+
+Difference in first (LEVS) panel of Domain Profile 'mthetlev' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Select vertical level type
+ Job xbgjk: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+ Job xbjim: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+
+Difference in first (LEVS) panel of Domain Profile 'mdlslv' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Select vertical level type
+ Job xbgjk: Entry is set to 'Variables derived on a single or unspecified level'
+ Job xbjim: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+
+Difference in first (LEVS) panel of Domain Profile 'prslevs' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Differences in Table Select real levels
+ 2d1
+<  975.000
+7,8d5
+<  800.000
+<  750.000
+12d8
+<  450.000
+14d9
+<  350.000
+16d10
+<  275.000
+18d11
+<  225.000
+20d12
+<  175.000
+
+
+Difference in first (LEVS) panel of Domain Profile '' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 1
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Range of model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Range of model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Range of model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Range of model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Range of model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Range of model levels'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on a single or unspecified level'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model theta levels (Charney-Philips grid) '
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on model rho levels (Charney-Philips grid)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on deep soil levels'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on a single or unspecified level'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on a single or unspecified level'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables on pressure levels (hPa)'
+Radio button: Select vertical level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Variables derived on a single or unspecified level'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Radio button: Specification of levels by
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'List of selected model levels'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '19'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_BOTTOM'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_BOTTOM'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_BOTTOM-1'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_BOTTOM'
+Range starting at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '1'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '47'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_TOP'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_TOP'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_TOP'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'ATMOS_TOP+1'
+Range ending at (see Level Names Help)
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '4'
+
+Difference in PSEUDO panel of Domain Profile '' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 2
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Land and Vegetation Surface types'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Land and Vegetation Surface types'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No pseudo level dimension'
+Radio button: Specify pseudo level type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'SW radiation bands'
+Differences in Table Specify the bands/groups required
+ 0a1
+>  1
+
+
+Difference in HORIZ panel of Domain Profile '' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 3
+Entry box: Eastern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '219'
+Entry box: Eastern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '219'
+Entry box: Eastern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '219'
+Entry box: Northern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '710'
+Entry box: Northern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '710'
+Entry box: Northern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '710'
+Entry box: Southern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '60'
+Entry box: Southern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '60'
+Entry box: Southern limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '60'
+Entry box: Western limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '805'
+Entry box: Western limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '805'
+Entry box: Western limit
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '805'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Select meaning option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No spatial averaging'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Specify point option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'All gridpoints'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified area in gridpoints'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified area in gridpoints'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Specified area in gridpoints'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select horizontal domain type
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Full model area'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+Radio button: Select weighting option
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'No weighting'
+
+Difference in TSERIES panel of Domain Profile '' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Domain profile window, 4
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+Check box: Is this a time-series domain profile?
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'OFF'
+
+Difference in Usage Profile 'prs' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '62'
+ Job xbjim: Entry is set to '61'
+
+Difference in Usage Profile 'mdl' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '64'
+ Job xbjim: Entry is set to '62'
+
+Difference in Usage Profile 'cldrad' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '65'
+ Job xbjim: Entry is set to '63'
+
+Difference in Usage Profile 'slv_extr' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '66'
+ Job xbjim: Entry is set to '68'
+
+Difference in Usage Profile 'analslv' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '61'
+ Job xbjim: Entry is inactive
+Radio button: Specify the final destination of the diagnostic
+ Job xbgjk: Entry is set to 'PP-file. Specify stream below'
+ Job xbjim: Entry is inactive
+
+Difference in Usage Profile 'analmdl' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '63'
+ Job xbjim: Entry is inactive
+Radio button: Specify the final destination of the diagnostic
+ Job xbgjk: Entry is set to 'PP-file. Specify stream below'
+ Job xbjim: Entry is inactive
+
+Difference in Usage Profile 'lbcf' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '68'
+ Job xbjim: Entry is inactive
+Radio button: Specify the final destination of the diagnostic
+ Job xbgjk: Entry is set to 'PP-file. Specify stream below'
+ Job xbjim: Entry is inactive
+
+Difference in Usage Profile 'anslv10' (Edit Profile in window atmos_STASH)
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH. Specification of Diagnostic requirements
+         -> Usage profile window
+Entry box: Specify PP output unit (unit 60-69 for stream 0-9;151 for stream PP10)
+ Job xbgjk: Entry is set to '69'
+ Job xbjim: Entry is inactive
+Radio button: Specify the final destination of the diagnostic
+ Job xbgjk: Entry is set to 'PP-file. Specify stream below'
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_STASH_Misc
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH related choices
+Radio button: PMSL smoothing
+ Job xbgjk: Entry is unset
+ Job xbjim: Entry is set to 'Use Jacobi algorithm (more scalable at high node counts)'
+Entry box: Height threshold for PMSL geostrophic wind calculation
+ Job xbgjk: Entry is set to '0.00'
+ Job xbjim: Entry is set to '500.00'
+
+Difference in window atmos_STASH_UserDiags
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> User-STASHmaster files. Diags, Progs & Ancills.
+Differences in Table Specify the STASHmaster files
+ 1,2d0
+<  ~yix/keep/um/UKV/PS32/GL_USTASH6.4.0_convLS
+<  ~yix/keep/um/UKV/PS32/stash_4581_8.2
+
+Check box: Using user STASHmaster files for the Atmosphere.
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+
+Difference in window atmos_STASH_UserProgs
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> Initialisation of User Prognostics
+Could not find USRP_INDEX_A in window atmos_STASH_UserProgs
+ Job xbgjk: 
+ Job xbjim: Entry is inactive
+
+Difference in window atmos_STASH_Macros_OPS
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH macros
+         -> OPS interface macros
+Differences in Table Output time list
+ 1,2c1
+<  1
+<  2
+---
+>  0
+4,5d2
+<  4
+<  5
+7d3
+<  7
+
+Entry box: Number of times in list
+ Job xbgjk: Entry is set to '7'
+ Job xbjim: Entry is set to '3'
+Radio button: CX fields macro:
+ Job xbgjk: Entry is set to 'Standard Macro'
+ Job xbjim: Entry is set to 'Development Macro'
+Radio button: Background error fields macro (global only):
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to 'Standard Macro'
+
+Difference in window atmos_STASH_Macros_VAR
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH macros
+         -> VAR interface macro
+Check box: WGDOS pack fields
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Check box: Include aerosol (90)
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is set to 'OFF'
+Entry box: Ending
+ Job xbgjk: Entry is set to '6'
+ Job xbjim: Entry is set to '5'
+
+Difference in window atmos_STASH_Macros_UARS
+ -> Model Selection
+   -> Atmosphere
+     -> STASH
+       -> STASH macros
+         -> Stratosphere UARS macro
+Radio button: Choose mode
+ Job xbgjk: Entry is set to 'No Macro'
+ Job xbjim: Entry is set to 'Use Stratosphere UARS macro'
+
+Difference in window atmos_Control_PostProc_ScriptRel
+ -> Model Selection
+   -> Atmosphere
+     -> Control
+       -> Post processing, Dumping & Meaning
+         -> User script release
+Differences in Table Script Release
+ 1c1
+<  2 qspipe.subhhh Y
+---
+>  3 qspipe.subhhh Y
+
+
+Difference in window atmos_Control_OutputData_LBC1
+ -> Model Selection
+   -> Atmosphere
+     -> Control
+       -> Output data files (LBCs etc)
+         -> LBC's out
+Check box: Reset specific humidity to a minimum value in LBC data (applies to all LBC streams)
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Entry box: Specify minimum value:
+ Job xbgjk: Entry is inactive
+ Job xbjim: Entry is set to '2.500e-06'
+
+Difference in window atmos_Control_OutputData_LBC2
+ -> Model Selection
+   -> Atmosphere
+     -> Control
+       -> Output data files (LBCs etc)
+         -> LBC's out
+           -> Follow on window 1
+Entry box: Stream name
+ Job xbgjk: Entry is set to 'HRTMi_01'
+ Job xbjim: Entry is set to '{UK Mes} NAE Poland {} {New Zealand} {} {Euro Mes} {Falklands MES}'
+
+Difference in window jules_Science_Section_LSurf
+ -> Model Selection
+   -> JULES
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 1: Surface Exchange
+           -> Section 1: Land Surface
+Check box: Aggregate tile properties
+ Job xbgjk: Entry is set to 'OFF'
+ Job xbjim: Entry is set to 'ON'
+Differences in Table Non-Vegetation Surface Type Parameters continued...
+ 1,4c1,4
+<  1.00000e+00 2.80000e+05 1.00000e+00 9.70000e-01 1.00000e-07
+<  1.00000e-04 4.18000e+06 1.00000e+00 9.70000e-01 2.50000e-01
+<  1.00000e-03 0.00000e+00 0.00000e+00 9.70000e-01 2.00000e-02
+<  5.00000e-04 0.00000e+00 0.00000e+00 9.70000e-01 2.00000e-01
+---
+>  1.00000e+00 2.80000e+05 1.00000e+00 9.70000e-01 1.00000e-01
+>  3.00000e-04 0.00000e+00 0.00000e+00 9.70000e-01 1.00000e-01
+>  3.20000e-03 0.00000e+00 0.00000e+00 9.70000e-01 1.00000e-01
+>  5.00000e-04 0.00000e+00 0.00000e+00 9.70000e-01 1.00000e-01
+
+
+Difference in window jules_Science_Section_Snow
+ -> Model Selection
+   -> JULES
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 3: Snow
+Check box: Use the equivalent canopy snow depth in surface calculations
+ Job xbgjk: Entry is set to 'ON'
+ Job xbjim: Entry is inactive
+
+Difference in window jules_Science_Section_Plant
+ -> Model Selection
+   -> JULES
+     -> Scientific Parameters and Sections
+       -> Section by section choices
+         -> Section 5: Plant Physiology
+Differences in Table Vegetation Surface Type Parameters continued...
+ 1,2c1,2
+<  5.00000e-02 4.00000e+00 5.00000e-01 3.00000e+00 1.65000e+00
+<  5.00000e-02 4.00000e+00 5.00000e-01 1.00000e+00 1.65000e+00
+---
+>  5.00000e-02 4.00000e+00 5.00000e-01 3.00000e+00 1.00000e-01
+>  5.00000e-02 4.00000e+00 5.00000e-01 1.00000e+00 1.00000e-01
+
+
+Difference in window no_home_panel
+Path to no_home_panel not in navigation tree
+Difference in variable ATM19_IN
+ Job xbgjk: 
+ Job xbjim: 1B
+Difference in variable ATMVN_3
+ Job xbgjk: 8B
+ Job xbjim: 8C
+Difference in variable JULES8_IN
+ Job xbgjk: 
+ Job xbjim: 1A
+
+Difference in window atmos_InFiles_OtherAncil_Ozone
+Path to atmos_InFiles_OtherAncil_Ozone not in navigation tree
+Difference in variable EXPOZ
+ Job xbgjk: N
+ Job xbjim: Y
+
+
