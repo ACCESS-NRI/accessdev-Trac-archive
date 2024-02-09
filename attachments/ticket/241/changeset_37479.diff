@@ -1,0 +1,106 @@
+Index: /OPS/trunk/doc/technical/OTDP6/OTDP6.html
+===================================================================
+--- /OPS/trunk/doc/technical/OTDP6/OTDP6.html	(revision 37478)
++++ /OPS/trunk/doc/technical/OTDP6/OTDP6.html	(revision 37479)
+@@ -2638,4 +2638,38 @@
+ 
+       </tr>
++      
++      <tr>
++
++        <td><br>
++      </td>
++
++
++        <td><br>
++      </td>
++
++
++        <td>JMAWINDSWV62 (31)</td>
++
++
++        <td>23531</td>
++
++      </tr>
++      
++      <tr>
++
++        <td><br>
++      </td>
++
++
++        <td><br>
++      </td>
++
++
++        <td>JMAWINDSWV73 (32)</td>
++
++
++        <td>23532</td>
++
++      </tr>
+ 
+ 
+Index: /OPS/trunk/src/code/OpsMod_Satwind/Ops_Satwind_SetChan.f90
+===================================================================
+--- /OPS/trunk/src/code/OpsMod_Satwind/Ops_Satwind_SetChan.f90	(revision 37478)
++++ /OPS/trunk/src/code/OpsMod_Satwind/Ops_Satwind_SetChan.f90	(revision 37479)
+@@ -44,5 +44,6 @@
+   ObsTYPEUkOZONE,       ObsTYPEUkHRVIS,       ObsTYPEUkVIS06,        &
+   ObsTYPEUkVIS08,       ObsTYPEUkWV62,        ObsTYPEUkWV73,         &
+-  ObsTYPEUkCSWV62,      ObsTYPEUkCSWV73,      ObsTYPEStereomvVIS06
++  ObsTYPEUkCSWV62,      ObsTYPEUkCSWV73,      ObsTYPEStereomvVIS06,  &
++  ObsTYPEJmawindsWV62,  ObsTYPEJmawindsWV73
+ 
+ IMPLICIT NONE
+@@ -190,5 +191,6 @@
+     ! ------
+       CASE (ObsTYPEMsgWV62,        &
+-            ObsTYPEUkWV62)
++            ObsTYPEUkWV62,         &
++            ObsTYPEJmawindsWV62)
+       Obs % ChanNum(i,1) = 31
+ 
+@@ -196,5 +198,6 @@
+     ! ------
+        CASE (ObsTYPEMsgWV73,        &
+-             ObsTYPEUkWV73)
++             ObsTYPEUkWV73,         &
++             ObsTYPEJmawindsWV73)
+       Obs % ChanNum(i,1) = 32
+ 
+Index: /OPS/trunk/src/code/OpsMod_Satwind/Ops_Satwind_SetObsType.f90
+===================================================================
+--- /OPS/trunk/src/code/OpsMod_Satwind/Ops_Satwind_SetObsType.f90	(revision 37478)
++++ /OPS/trunk/src/code/OpsMod_Satwind/Ops_Satwind_SetObsType.f90	(revision 37479)
+@@ -51,4 +51,6 @@
+   ObsTypeJMAWindsVIS,      &
+   ObsTypeJMAWindsWV,       &
++  ObsTypeJMAWindsWV62,     &
++  ObsTypeJMAWindsWV73,     &
+   ObsTypeKMAWinds,         &
+   ObsTypeKMAWindsCSWV,     &
+@@ -328,4 +330,12 @@
+                Obs % SatObChannel(iob) == 7) THEN
+         Obs % ObsType(iob) = ObsTypeJmawindsMIXWV
++      ELSE IF (Obs % ChanCtralFreq(iob) > WV62CtralFreqLower .AND. &
++               Obs % ChanCtralFreq(iob) < WV62CtralFreqUpper .AND. &
++               Obs % SatObChannel(iob) == 3) THEN
++        Obs % ObsType(iob) = ObsTypeJmawindsWV62
++      ELSE IF (Obs % ChanCtralFreq(iob) > WV73CtralFreqLower .AND. &
++               Obs % ChanCtralFreq(iob) < WV73CtralFreqUpper .AND. &
++               Obs % SatObChannel(iob) == 3) THEN
++        Obs % ObsType(iob) = ObsTypeJmawindsWV73
+       END IF
+ 
+Index: /OPS/trunk/src/public/Ops_Constants/OpsMod_ObsTypes.f90
+===================================================================
+--- /OPS/trunk/src/public/Ops_Constants/OpsMod_ObsTypes.f90	(revision 37478)
++++ /OPS/trunk/src/public/Ops_Constants/OpsMod_ObsTypes.f90	(revision 37479)
+@@ -120,4 +120,6 @@
+ INTEGER, PARAMETER :: ObsTYPEJmawindsMIXWV= 23507   ! => JMA - mixed water vapour
+ INTEGER, PARAMETER :: ObsTYPEJmawindsIR38 = 23511   ! => JMA - infrared 3.8
++INTEGER, PARAMETER :: ObsTYPEJmawindsWV62 = 23531   ! => JMA - cloudy water vapour 6.2
++INTEGER, PARAMETER :: ObsTYPEJmawindsWV73 = 23532   ! => JMA - cloudy water vapour 7.3
+ INTEGER, PARAMETER :: ObsTYPEMsgwinds     = 23600   ! => MSG - unknown channel
+ INTEGER, PARAMETER :: ObsTYPEMsgIR38      = 23611   ! => MSG - infrared 3.8
